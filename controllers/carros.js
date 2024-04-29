@@ -30,49 +30,48 @@ carros.id == id);
     res.send(carros);
 }
 
+
 //cria um carro
 exports.create = async (req, res) => {
     //obter o carro pelas características enviadas
-    const {id, Marca, Detalhe, Foto} = req.body;
+    const {id, Marca, Detalhes, Foto} = req.body;
      //ler o ficheiro local
-     const datajson = 
-fs.readFileSync("./controllers/data/local/data.json", "utf-8");
+     const datajson =
+fs.readFileSync("data/local/data.json", "utf-8");
      //parse do json
      const data = JSON.parse(datajson);
      //adicionar carro à lista
     data.carros.push(req.body);
     //Criar o novo ficheiro com o carro adicionado
-    fs.writeFileSync('./controllers/data/local/data.json.json', 
+    fs.writeFileSync('data/local/data.json',
 JSON.stringify(data));
     //devolve o novo carro
     return res.status(201).send(req.body);
 }
 
-//atualiza o carro
-    exports.update = async (req, res) => {
-        //obter o carro pelas características enviadas
-        const {id, Marca, Detalhe, Foto} = req.body;
-         //ler o ficheiro local
-         const datajson = 
-    fs.readFileSync("./controllers/data/local/data.json.json", "utf-8");
-         //parse do json
-         const data = JSON.parse(datajson);
-         //procurar o carro para actualizar
-        const carros = data.carros.find(carro => carro.id == 
-    id);
-        //atualizar as caraterísticas
-        carros.Marca = Marca;
-        carros.Detalhe = Detalhe;
-        carros.Foto = Foto;
-        //actualizar no ficheiro json
-        fs.writeFileSync('./controllers/data/local/data.json.json', 
-    JSON.stringify(data));
-        //devolver o carro alterado
-        return res.send({id, Marca, Detalhe, Foto});
-    }
+  //atualiza o carro
+exports.update = async (req, res) => {
+    //obter o carro pelas características enviadas
+    const {id, Marca, Detalhes, Foto} = req.body;
+     //ler o ficheiro local
+     const datajson =
+fs.readFileSync("data/local/data.json", "utf-8");
+     //parse do json
+     const data = JSON.parse(datajson);
+     //procurar o carro para actualizar
+    const carros = data.carros.find(carro => carro.id ==
+id);
+    //atualizar as caraterísticas
+    carros.Marca = Marca;
+    carros.Detalhes = Detalhes;
+    carros.Foto = Foto;
+    //actualizar no ficheiro json
+    fs.writeFileSync('data/local/data.json',
+JSON.stringify(data));
+    //devolver o carro alterado
+    return res.send({id, Marca, Detalhes, Foto});
+}
 
-
-//apaga o carro com o id
 //apaga o carro com o id
 exports.delete = async (req, res) => {
     //obter o id do carro
