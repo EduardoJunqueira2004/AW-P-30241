@@ -5,9 +5,7 @@ const cors = require('cors');
 const express = require('express');
 
 const router = require('./routes/index');
-const Pgs = require('./routes/pgs/index');
-const routerLocal = require('./routes/local/index');
-const routerPgs = require('./routes/pgs/index'); // Remova esta linha
+//const Pgs = require('./routes/pgs/index');
 const publicoRouter = require('./routes/publico');
 const privadoRouter = require('./routes/privado');
 
@@ -18,10 +16,12 @@ app.use(cors());
 app.use(express.static('templates/frontEnd'));
 //app.use('/', publicoRouter);
 app.use('/bo/', privadoRouter);
-app.use('/api/local', routerLocal);
+app.use('/api/local', privadoRouter);
+app.use('/api/', router);
+const routerPgs = require('./routerPgs'); // Importe o arquivo de roteador adequado
 app.use('/api/pgs/', routerPgs);
 
 const port = process.env.SERVER_PORT || 4240;
 app.listen(port, () => {
-    console.log('Express server listening on port', port)
+    console.log('Express server listening on port',port)
 });

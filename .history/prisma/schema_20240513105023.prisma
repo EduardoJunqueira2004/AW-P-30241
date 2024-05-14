@@ -1,6 +1,6 @@
 {
   "prisma": {
-    "schema": "/Users/eduardojunqueira/Desktop/AW-P-30241-new/prisma/schema.prisma"
+    "schema": "schema.prisma"
   }
 }
 
