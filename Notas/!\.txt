@@ -1,0 +1,3 @@
+git add .
+git commit -m "Adicionando novos recursos"
+git push origin main
