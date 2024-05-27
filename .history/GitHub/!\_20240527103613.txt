@@ -1,0 +1,14 @@
+//Configuração Inicial:
+# Configurar nome de usuário
+git config --global user.name "Seu Nome"
+
+# Configurar email de usuário
+git config --global user.email "seu.email@example.com"
+
+# Verificar configurações
+git config --list
+
+git add .
+git commit -m "Adicionando novos recursos"
+git push origin main
+

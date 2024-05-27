@@ -1,7 +1,7 @@
 const carrosRouter = require('express').Router();
 const controller = require('../controllers/carros');
 
-//CRUD para o Carro:
+//CRUD para o Carro
 carrosRouter.get('/', controller.getAll); //le todos
 carrosRouter.get('/:id', controller.getById); //le 1 carro pelo id
 carrosRouter.post('/create', controller.create); //criar um novo carro

@@ -1,0 +1,20 @@
+//Configuração Inicial:
+# Configurar nome de usuário
+git config --global user.name "Seu Nome"
+
+# Configurar email de usuário
+git config --global user.email "seu.email@example.com"
+
+# Verificar configurações
+git config --list
+
+Clonar Repositório
+# Clonar um repositório existente
+git clone https://github.com/usuario/repositorio.git
+
+Status e Histórico:
+
+git add .
+git commit -m "Adicionando novos recursos"
+git push origin main
+

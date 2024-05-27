@@ -1,0 +1,58 @@
+//Configuração Inicial:
+# Configurar nome de usuário
+git config --global user.name "Seu Nome"
+
+# Configurar email de usuário
+git config --global user.email "seu.email@example.com"
+
+# Verificar configurações
+git config --list
+/////////////////////////////////////////////////////////
+Clonar Repositório
+# Clonar um repositório existente
+git clone https://github.com/usuario/repositorio.git
+/////////////////////////////////////////////////////////
+
+Status e Histórico:
+# Verificar o status dos arquivos
+git status
+
+# Verificar o histórico de commits
+git log
+/////////////////////////////////////////////////////////
+Branches:
+# Listar branches
+git branch
+
+# Criar uma nova branch
+git branch nova-branch
+
+# Mudar para uma branch específica
+git checkout nome-da-branch
+
+# Criar e mudar para uma nova branch
+git checkout -b nova-branch
+
+# Unir uma branch à branch atual
+git merge nome-da-branch
+
+# Excluir uma branch
+git branch -d nome-da-branch
+/////////////////////////////////////////////////////////
+Manipulação de Arquivos
+# Adicionar arquivos específicos
+git add arquivo1 arquivo2
+
+# Adicionar todos os arquivos rastreados e não rastreados
+git add -A
+
+# Remover um arquivo e marcá-lo para remoção no próximo commit
+git rm arquivo
+
+# Renomear um arquivo
+git mv arquivo-antigo novo-arquivo
+/////////////////////////////////////////////////////////
+git add .
+git commit -m "Adicionando novos recursos"
+git push origin main
+
